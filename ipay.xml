@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="vmpayment">
+        <name>Virtuemart iPay Plugin</name>
+        <author>darelabs</author>
+        <creationDate>September 15th, 2012</creationDate>
+        <copyright>Dareworks</copyright>
+        <license>GNU General Public License</license>
+        <authorEmail>engineering@dareworks.com</authorEmail>
+        <authorUrl>http://www.dareworks.com</authorUrl>
+        <version>1.0</version>
+        <description>iPay Payment Plugin</description>
+        
+        
+        
+        <files>
+                <filename plugin="ipay">ipay.php</filename>
+                <filename >notify.php</filename>
+        </files>
+
+        
+        <params addpath="/administrator/components/com_virtuemart/elements">
+	        <param type="vmjpluginwarning" />
+            <param type="text" name="ipay_gateway_version"  size="50" label="VMPAYMENT_IPAY_GATEWAY_VERSION"
+                 default="1" description="VMPAYMENT_IPAY_GATEWAY_VERSION_DESC" />
+            <param type="text" name="ipay_merchant_key"  size="50" label="VMPAYMENT_IPAY_MERCHANT_KEY"
+                 default="" description="VMPAYMENT_IPAY_MERCHANT_KEY_DESC" />
+            <param type="text" name="ipay_notification_url"  size="50" label="VMPAYMENT_IPAY_PYMT_NOTIFICATION"
+                 default="http://yourdomain/plugins/vmpayment/ipay/notify.php" description="VMPAYMENT_IPAY_PYMT_NOTIFICATION_DESC" />
+            <param type="text" name="ipay_cancelled_url"  size="50" label="VMPAYMENT_IPAY_CANCELLED_URL"
+                 default="" description="VMPAYMENT_IPAY_CANCELLED_URL_DESC" />
+            <param type="text" name="ipay_success_url"  size="50" label="VMPAYMENT_IPAY_SUCCESS_URL"
+                 default="" description="VMPAYMENT_IPAY_SUCCESS_URL_DESC" />
+            <param type="text" name="ipay_gateway_url"  size="50" label="VMPAYMENT_IPAY_GATEWAY_URL"
+                 default="https://api.ipaygh.com/gateway/api/new_order" description="VMPAYMENT_IPAY_GATEWAY_URL_DESC" />
+	        <param name="ipay_gateway_mode" type="radio" default="1" label="VMPAYMENT_IPAY_MODE" description="VMPAYMENT_IPAY_MODE_DESC" >
+	            <option value="1">Live</option>
+	            <option value="0">Test</option>
+	        </param>
+	        
+           <param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_IPAY_STATUS_PENDING" description="VMPAYMENT_IPAY_STATUS_PENDING_EXPLAIN" />
+           <param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_IPAY_STATUS_SUCCESS" description="VMPAYMENT_IPAY_STATUS_SUCCESS_EXPLAIN" />
+           <param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_IPAY_STATUS_FAILED" description="VMPAYMENT_IPAY_STATUS_FAILED_EXPLAIN" />
+        </params>
+        
+             
+</extension>
